@@ -14,6 +14,7 @@ public static class DownMixAlgorithmsHelper
     /// </summary>
     public static readonly Dictionary<(DownMixStereoAlgorithms, string), string> AlgorithmFilterStrings = new()
     {
+        { (DownMixStereoAlgorithms.Johan, "5.1"), "pan=stereo|c0=0.7071*c2+1*c0+0.5*c4+0.3162*c3|c1=0.7071*c2+1*c1+0.5*c5+0.3162*c3" },
         { (DownMixStereoAlgorithms.Dave750, "5.1"), "pan=stereo|c0=0.5*c2+0.707*c0+0.707*c4+0.5*c3|c1=0.5*c2+0.707*c1+0.707*c5+0.5*c3" },
         // Use AC-4 algorithm to downmix 7.1 inputs to 5.1 first
         { (DownMixStereoAlgorithms.Dave750, "7.1"), "pan=5.1(side)|c0=c0|c1=c1|c2=c2|c3=c3|c4=0.707*c4+0.707*c6|c5=0.707*c5+0.707*c7,pan=stereo|c0=0.5*c2+0.707*c0+0.707*c4+0.5*c3|c1=0.5*c2+0.707*c1+0.707*c5+0.5*c3" },
